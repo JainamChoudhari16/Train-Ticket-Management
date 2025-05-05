@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Railway Booking System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="admin-dashboard.html" class="d-flex align-items-center mb-3 mb-md-0 text-decoration-none">
+                    <span class="fs-4 text-light"></span>
+                </a>
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#dashboard-section" class="nav-link active" data-section="dashboard-section">
+                        <i class="bi bi-speedometer2 me-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#register-train-section" class="nav-link" data-section="register-train-section">
+                        <i class="bi bi-train-front me-2"></i>
+                        Register Train
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile-section" class="nav-link" data-section="profile-section">
+                        <i class="bi bi-person-gear me-2"></i>
+                        Profile
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="text-center mt-3">
+                <a href="login.html" class="btn btn-sm btn-outline-light">
+                    <i class="bi bi-box-arrow-right me-2"></i>Sign out
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="dashboard-header p-3 border-bottom">
+                <div class="container-fluid">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <button class="btn btn-primary btn-sm d-md-none me-3" id="sidebarToggle">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <h1 class="h2 mb-0 section-title">Dashboard</h1>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 dropdown">
+                                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>Admin</span>
+                                </a>
+                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                                    <li><a class="dropdown-item" href="#" id="adminProfileMenuLink">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="login.html">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="dashboard-section active-section">
+                <div class="container-fluid py-4">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h2 class="card-title h5 mb-0">Booking Statistics</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3 class="h6">Number of tickets booked per class</h3>
+                                            <div class="table-responsive">
+                                                <table class="table table-sm">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Class</th>
+                                                            <th>Tickets</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>First Class</td>
+                                                            <td>32</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>A.C Tier 1</td>
+                                                            <td>45</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>A.C Tier 2</td>
+                                                            <td>78</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tatkal</td>
+                                                            <td>23</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3 class="h6">Sales done per quarter</h3>
+                                            <div class="table-responsive">
+                                                <table class="table table-sm">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Quarter</th>
+                                                            <th>Sales (₹)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Q1 (Jan-Mar)</td>
+                                                            <td>₹1,85,780</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Q2 (Apr-Jun)</td>
+                                                            <td>₹2,12,540</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Q3 (Jul-Sep)</td>
+                                                            <td>₹1,98,920</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Q4 (Oct-Dec)</td>
+                                                            <td>₹2,22,350</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature-icon bg-primary text-white me-3">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <h3 class="h5 mb-0">Total Customers</h3>
+                                    </div>
+                                    <p class="display-6 mb-0">186</p>
+                                    <p class="small text-muted">+23 this month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature-icon bg-success text-white me-3">
+                                            <i class="bi bi-currency-rupee"></i>
+                                        </div>
+                                        <h3 class="h5 mb-0">Total Revenue</h3>
+                                    </div>
+                                    <p class="display-6 mb-0">₹8,19,590</p>
+                                    <p class="small text-muted">+₹1,12,350 this month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="feature-icon bg-info text-white me-3">
+                                            <i class="bi bi-train-front"></i>
+                                        </div>
+                                        <h3 class="h5 mb-0">Active Trains</h3>
+                                    </div>
+                                    <p class="display-6 mb-0">42</p>
+                                    <p class="small text-muted">+5 this month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h2 class="card-title h5 mb-0">Customer Data</h2>
+                                    <div class="d-flex gap-2">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Search customers..." id="customerSearch">
+                                        <button class="btn btn-sm btn-primary" id="refreshCustomerTable">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover" id="customersTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Mobile</th>
+                                                    <th>Tickets Booked</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>USER123</td>
+                                                    <td>John Doe</td>
+                                                    <td>9876543210</td>
+                                                    <td>8</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger delete-customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal" data-customer-id="USER123">
+                                                            <i class="bi bi-trash"></i> Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USER124</td>
+                                                    <td>Jane Smith</td>
+                                                    <td>9876543211</td>
+                                                    <td>5</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger delete-customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal" data-customer-id="USER124">
+                                                            <i class="bi bi-trash"></i> Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USER125</td>
+                                                    <td>Robert Johnson</td>
+                                                    <td>9876543212</td>
+                                                    <td>3</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger delete-customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal" data-customer-id="USER125">
+                                                            <i class="bi bi-trash"></i> Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>USER126</td>
+                                                    <td>Sarah Williams</td>
+                                                    <td>9876543213</td>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger delete-customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal" data-customer-id="USER126">
+                                                            <i class="bi bi-trash"></i> Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <nav aria-label="Customer table navigation">
+                                        <ul class="pagination justify-content-end">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Delete Customer Modal -->
+                <div class="modal fade" id="deleteCustomerModal" tabindex="-1" aria-labelledby="deleteCustomerModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteCustomerModalLabel">Confirm Deletion</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete customer <span id="deleteCustomerId" class="fw-bold"></span>?</p>
+                                <p class="text-danger">This action cannot be undone. All associated bookings will also be deleted.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger" id="confirmDeleteCustomer">Delete Customer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Register Train Section -->
+            <section id="register-train-section" class="dashboard-section">
+                <div class="container-fluid py-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mx-auto">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h2 class="card-title h5 mb-0">Register a New Train</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form id="registerTrainForm">
+                                        <div class="mb-3">
+                                            <label for="trainName" class="form-label">Name of Train</label>
+                                            <input type="text" class="form-control" id="trainName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="numSeats" class="form-label">Number of Seats</label>
+                                            <input type="number" class="form-control" id="numSeats" min="1" required>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="fromStation" class="form-label">From</label>
+                                                <select class="form-select" id="fromStation" required>
+                                                    <option value="" selected disabled>Select boarding station</option>
+                                                    <option value="Mumbai">Mumbai</option>
+                                                    <option value="Delhi">Delhi</option>
+                                                    <option value="Kolkata">Kolkata</option>
+                                                    <option value="Chennai">Chennai</option>
+                                                    <option value="Bangalore">Bangalore</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="toStation" class="form-label">To</label>
+                                                <select class="form-select" id="toStation" required>
+                                                    <option value="" selected disabled>Select destination station</option>
+                                                    <option value="Mumbai">Mumbai</option>
+                                                    <option value="Delhi">Delhi</option>
+                                                    <option value="Kolkata">Kolkata</option>
+                                                    <option value="Chennai">Chennai</option>
+                                                    <option value="Bangalore">Bangalore</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="trainOwnership" class="form-label">Ownership for the Train</label>
+                                            <select class="form-select" id="trainOwnership" required>
+                                                <option value="" selected disabled>Select ownership</option>
+                                                <option value="Indian Railways">Indian Railways</option>
+                                                <option value="IRCTC">IRCTC</option>
+                                                <option value="Private">Private</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="btn btn-primary">Register Train</button>
+                                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <div class="card shadow-sm mt-4">
+                                <div class="card-header">
+                                    <h2 class="card-title h5 mb-0">Recently Registered Trains</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover" id="recentTrainsTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>From</th>
+                                                    <th>To</th>
+                                                    <th>Seats</th>
+                                                    <th>Ownership</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>TRN101</td>
+                                                    <td>Rajdhani Express</td>
+                                                    <td>Mumbai</td>
+                                                    <td>Delhi</td>
+                                                    <td>850</td>
+                                                    <td>Indian Railways</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>TRN102</td>
+                                                    <td>Shatabdi Express</td>
+                                                    <td>Delhi</td>
+                                                    <td>Kolkata</td>
+                                                    <td>720</td>
+                                                    <td>IRCTC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>TRN103</td>
+                                                    <td>Duronto Express</td>
+                                                    <td>Chennai</td>
+                                                    <td>Bangalore</td>
+                                                    <td>680</td>
+                                                    <td>Indian Railways</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Train Registered Modal -->
+                <div class="modal fade" id="trainRegisteredModal" tabindex="-1" aria-labelledby="trainRegisteredModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-success text-white">
+                                <h5 class="modal-title" id="trainRegisteredModalLabel">Train Registered Successfully</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>The train has been successfully registered with the following details:</p>
+                                <div class="train-details">
+                                    <div class="row">
+                                        <div class="col-6 mb-2">
+                                            <p class="mb-0 text-muted">Train ID:</p>
+                                            <p class="fw-bold" id="registeredTrainId">TRN104</p>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <p class="mb-0 text-muted">Name:</p>
+                                            <p class="fw-bold" id="registeredTrainName">Tejas Express</p>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <p class="mb-0 text-muted">From:</p>
+                                            <p class="fw-bold" id="registeredFromStation">Mumbai</p>
+                                        </div>
+                                        <div class="col-6 mb-2">
+                                            <p class="mb-0 text-muted">To:</p>
+                                            <p class="fw-bold" id="registeredToStation">Goa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile-section" class="dashboard-section">
+                <div class="container-fluid py-4">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mx-auto">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h2 class="card-title h5 mb-0">Update Admin Profile</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form id="updateAdminProfileForm">
+                                        <div class="mb-3">
+                                            <label for="adminUsername" class="form-label">Username</label>
+                                            <input type="text" class="form-control" id="adminUsername" value="admin" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="adminMobile" class="form-label">Mobile Number</label>
+                                            <input type="tel" class="form-control" id="adminMobile" value="9876543200" maxlength="10" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="adminEmail" class="form-label">Email ID</label>
+                                            <input type="email" class="form-control" id="adminEmail" value="admin@railbooker.com" required>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="updateAdminPassword">
+                                                <label class="form-check-label" for="updateAdminPassword">
+                                                    Update Password
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="adminPasswordUpdateSection" class="d-none">
+                                            <div class="card mb-3">
+                                                <div class="card-body">
+                                                    <div class="mb-3">
+                                                        <label for="adminCurrentPassword" class="form-label">Current Password</label>
+                                                        <input type="password" class="form-control" id="adminCurrentPassword">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="adminNewPassword" class="form-label">New Password</label>
+                                                        <input type="password" class="form-control" id="adminNewPassword">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="adminConfirmNewPassword" class="form-label">Confirm New Password</label>
+                                                        <input type="password" class="form-control" id="adminConfirmNewPassword">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Admin Profile Modal -->
+    <div class="modal fade" id="adminProfileModal" tabindex="-1" aria-labelledby="adminProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminProfileModalLabel">Admin Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-profile-details">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Username</label>
+                            <p id="adminProfileUsername">admin</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Mobile Number</label>
+                            <p id="adminProfileMobile">9876543200</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <p id="adminProfileEmail">admin@railbooker.com</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Role</label>
+                            <p id="adminProfileRole">System Administrator</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Password</label>
+                            <p>********</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="editAdminProfileBtn">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html> 
